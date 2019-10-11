@@ -28,6 +28,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- BEGIN Rest Dependencies -->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
@@ -40,22 +41,38 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jboss.weld.servlet</groupId>
-            <artifactId>weld-servlet-shaded</artifactId>
-            <version>3.1.2.Final</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jackson-provider</artifactId>
             <version>3.9.0.Final</version>
         </dependency>
+        <!-- BEGIN Rest Dependencies -->
 
+        <!-- BEGIN CDI Dependencies -->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-cdi</artifactId>
             <version>3.9.0.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.weld.servlet</groupId>
+            <artifactId>weld-servlet-shaded</artifactId>
+            <version>3.1.2.Final</version>
+        </dependency>
+        <!-- END CDI Dependencies -->
+
+        <!-- BEGIN Soap Dependencies -->
+        <dependency>
+            <groupId>javax.xml.ws</groupId>
+            <artifactId>jaxws-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+        <!-- END Soap Dependencies -->
 
     </dependencies>
 

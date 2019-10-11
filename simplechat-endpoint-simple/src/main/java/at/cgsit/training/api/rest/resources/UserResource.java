@@ -1,4 +1,4 @@
-package at.cgsit.training.api.rest;
+package at.cgsit.training.api.rest.resources;
 
 import at.cgsit.training.ApplicationInformation;
 
@@ -19,7 +19,7 @@ public class UserResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String message() {
-        return applicationInformation.helloWorld();
+        return "{ \"result\" : \"" + applicationInformation.helloWorld() + "\" }";
     }
 
 }
