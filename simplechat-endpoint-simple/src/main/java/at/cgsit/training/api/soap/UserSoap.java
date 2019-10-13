@@ -8,6 +8,10 @@ import javax.jws.WebService;
 )
 public class UserSoap {
 
+	/**
+	 * 
+	 * @return
+	 */
     @WebMethod
     public String message() {
         return "Hello World";

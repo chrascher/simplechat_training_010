@@ -10,7 +10,7 @@
         targetNamespace="http://soap.api.training.cgsit.at/" name="UserSoapService">
     <types>
         <xsd:schema>
-            <xsd:import namespace="http://soap.api.training.cgsit.at/" schemaLocation="http://localhost:8080/simplechat_endpoint_simple/api/soap?xsd=1"/>
+            <xsd:import namespace="http://soap.api.training.cgsit.at/" schemaLocation="http://localhost:5555/simplechat-endpoint-simple/api/soap?xsd=1"/>
         </xsd:schema>
     </types>
     <message name="message">
@@ -39,7 +39,7 @@
     </binding>
     <service name="UserSoapService">
         <port name="UserSoapPort" binding="tns:UserSoapPortBinding">
-            <soap:address location="http://localhost:8080/simplechat_endpoint_simple/api/soap"/>
+            <soap:address location="http://localhost:5555/simplechat-endpoint-simple/api/soap"/>
         </port>
     </service>
 </definitions>

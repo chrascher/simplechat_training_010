@@ -39,6 +39,11 @@
                 <artifactId>weld-servlet-core</artifactId>
                 <version>3.1.2.Final</version>
             </dependency>
+			<dependency>
+			    <groupId>log4j</groupId>
+			    <artifactId>log4j</artifactId>
+			    <version>1.2.17</version>
+			</dependency>               
         </dependencies>
     </dependencyManagement>
 
@@ -47,6 +52,10 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
         </dependency>
+			<dependency>
+			    <groupId>log4j</groupId>
+			    <artifactId>log4j</artifactId>
+			</dependency>  
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

@@ -22,7 +22,7 @@
 
     if (num > 0.95) {
 %>
-<h2>Success !</h2><p>(<%= num %>)</p>
+<h2>Success !</h2><p>(<%= df.format(num) %>)</p>
 <%
 } else {
 %>
