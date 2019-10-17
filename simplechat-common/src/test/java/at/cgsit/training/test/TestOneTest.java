@@ -55,7 +55,7 @@ public class TestOneTest {
     @Test
 	public void testRule() {	
         exceptionRule.expect(RuntimeException.class);
-        exceptionRule.expectMessage("my error message 222");
+        exceptionRule.expectMessage("my error message");
       
         throw new RuntimeException("my error message");
 

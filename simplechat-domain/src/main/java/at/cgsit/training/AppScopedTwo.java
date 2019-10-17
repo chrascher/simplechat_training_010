@@ -4,6 +4,8 @@
 package at.cgsit.training;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
+
 import org.apache.log4j.Logger;
 
 
@@ -15,7 +17,7 @@ import org.apache.log4j.Logger;
 public class AppScopedTwo {
 
 	final static Logger logger = Logger.getLogger(AppScopedTwo.class);
-	
+
 	
 	public void ping(String message) {		
 		logger.info("info message: " + message);

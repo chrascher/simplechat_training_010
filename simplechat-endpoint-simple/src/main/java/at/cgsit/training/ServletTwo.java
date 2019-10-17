@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 
 @WebServlet(name = "Simple Servlet two" , 
 	urlPatterns = "/myServletTwo",
@@ -26,17 +27,18 @@ public class ServletTwo extends HttpServlet {
 	private AppScopedTwo appInfo;
 	
     private String defaultMessage;
-
-    public void init() throws ServletException {
-        // Initialization code like set up database etc....
-
-    	ServletConfig config = getServletConfig();
     
+    DecimalFormat df = new DecimalFormat("###.###");
+    
+    public void init() throws ServletException {
+    	
+    	double num = Math.random();
+    	ServletConfig config = getServletConfig();   
     	
         String firstName = getInitParameter("firstName");
         String lastName = getInitParameter("lastName");
-        defaultMessage = getServletName() + firstName + " " + lastName;    
-        
+      
+        defaultMessage = config.getServletName() + "name: " + firstName + " " + lastName + " time: " + df.format(num);         
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

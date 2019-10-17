@@ -6,8 +6,10 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class TestX {
 
 	@BeforeClass
@@ -26,24 +28,5 @@ public class TestX {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testTestOneString() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testTestOne() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetTestMessage() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetTestMessage() {
-		fail("Not yet implemented");
-	}
 
 }

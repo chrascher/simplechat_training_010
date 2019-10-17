@@ -13,13 +13,12 @@ import javax.ws.rs.core.MediaType;
 @Dependent
 public class UserResource {
 
-    @Inject
-    private ApplicationInformation applicationInformation;
-
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String message() {
-        return "{ \"result\" : \"" + applicationInformation.helloWorld() + "\" }";
-    }
-
+        return "{ \"result\" : \" Hello World \" }";
+    }	
+	
+    
+    
 }

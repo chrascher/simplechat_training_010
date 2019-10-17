@@ -20,7 +20,7 @@
     double num = Math.random();
     DecimalFormat df = new DecimalFormat("###.###");
 
-    if (num > 0.95) {
+    if (num > 0.50) {
 %>
 <h2>Success !</h2><p>(<%= df.format(num) %>)</p>
 <%
@@ -28,9 +28,15 @@
 %>
 <h2> The number is too low ... </h2><p>(<%= df.format(num) %>)</p>
 <%
-    }
+    }  
+   if (num > 0.75) {
+%>
+<h2> dieNummer ist größer als 0,75 </h2>	   
+<%
+   }
 %>
 <a href="<%= request.getRequestURI() %>"><h3>Try Again</h3></a>
+<p><%=request.getRequestURI() %> </p>
 
 </div>
 </body>
