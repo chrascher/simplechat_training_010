@@ -2,6 +2,7 @@ package at.cgsit.training;
 
 import java.io.IOException;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +15,7 @@ import at.cgsit.training.beans.DemoBusinessBean;
 /**
  * Servlet implementation class VerySimpleServlet
  */
+@RequestScoped
 public class VerySimpleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

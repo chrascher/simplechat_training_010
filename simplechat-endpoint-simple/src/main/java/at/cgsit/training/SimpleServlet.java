@@ -1,5 +1,8 @@
 package at.cgsit.training;
 
+import at.cgsit.training.beans.DemoBusinessBean;
+
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +17,10 @@ import java.time.format.DateTimeFormatter;
 @WebServlet(name = "SimpleServlet" , urlPatterns = "/mySimpleservlet")
 public class SimpleServlet extends HttpServlet {
 
+    @Inject
+    DemoBusinessBean bean;
+
+
     private String defaultMessage;
     DecimalFormat df = new DecimalFormat("###.###");
     
@@ -27,6 +34,7 @@ public class SimpleServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Set response content type
         response.setContentType("text/html");
+        bean.calculate();
 
     	double num = Math.random();
     	
