@@ -1,0 +1,23 @@
+
+
+
+select a.username, a.created_on 
+	from chats.account as a 
+	where a.email like 'john%.at'
+	order by a.username ASC
+	LIMIT 100 OFFSET 0;
+	
+
+
+select * from chats.account;
+
+delete from chats.account;
+
+insert into "chats"."account" ("user_id", "username", "password", "email") values(1, 'john', 'test', 'john@cgs.at');
+insert into "chats"."account" ("user_id", "username", "password", "email") values(2, 'chris', 'test', 'chris@cgs.at');
+insert into "chats"."account" ("user_id", "username", "password", "email") values(3, 'max', 'test', 'max@cgs.at')
+insert into "chats"."account" ("user_id", "username", "password", "email") values(4, 'john2', 'test', 'john2@cgs.at');
+
+update "chats"."account" set "username"='john3' where "user_id"=4
+
+

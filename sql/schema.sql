@@ -1,0 +1,57 @@
+
+
+ALTER TABLE chats.account
+ADD COLUMN created_on SET DEFAULT NOW();
+
+DROP table chats.account;
+
+
+ 
+CREATE TABLE chats.account (
+   user_id serial PRIMARY KEY,
+   username VARCHAR (50) UNIQUE NOT NULL,
+   password VARCHAR (50) NOT NULL,
+   email VARCHAR (355) UNIQUE NOT NULL,
+   created_on TIMESTAMP DEFAULT NOW(),
+   last_login TIMESTAMP  DEFAULT NOW()
+);
+
+
+
+
+CREATE SCHEMA IF NOT EXISTS chats
+  AUTHORIZATION sc_admin;
+
+GRANT ALL ON SCHEMA chats TO sc_admin;
+GRANT USAGE ON SCHEMA chats TO sc_user;
+COMMENT ON SCHEMA chats
+  IS 'Schema für die chats-Applikation';
+  
+ALTER DEFAULT PRIVILEGES IN SCHEMA chats
+    GRANT INSERT, SELECT, UPDATE, DELETE, TRUNCATE, REFERENCES, TRIGGER ON TABLES
+    TO sc_user;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA chats
+    GRANT SELECT, UPDATE, USAGE ON SEQUENCES
+    TO sc_user;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA chats
+    GRANT EXECUTE ON FUNCTIONS
+    TO sc_user;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA chats
+    GRANT USAGE ON TYPES
+    TO sc_user;
+	
+
+
+
+SET SEARCH_PATH TO 'chats';
+
+CREATE TABLE test(
+   id serial PRIMARY KEY,
+   last_login TIMESTAMP
+);
+
+    
+	
