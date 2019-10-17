@@ -17,6 +17,7 @@ public class SimpleUsage {
 	@Inject
     private EntityManager entityManager;
 	
+	
     public List<ChatUser> doSomehting() {
 
 /*        EntityManagerFactory emfactory = Persistence.
