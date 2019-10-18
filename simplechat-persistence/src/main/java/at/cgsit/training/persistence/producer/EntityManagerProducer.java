@@ -1,36 +1,39 @@
 package at.cgsit.training.persistence.producer;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Default;
+import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.Persistence;
 
 @ApplicationScoped
 public class EntityManagerProducer {
 
-    // @Produces
-	@PersistenceContext(unitName = "chatsPU")
-    private EntityManager em;
-	
-	//@PersistenceContext(unitName = "chatsPU")
-    // private EntityManagerFactory entityManagerFactory;
+    private static EntityManagerFactory emf;
 
+    @PostConstruct
+    public void initHibernate() {
+        this.emf = Persistence.createEntityManagerFactory("chatsPU");
+    }
 
-//    @PersistenceContext(unitName = "chatsPU")
-//    public void setEntityManager(EntityManager entityManager) {
-//        this.em = entityManager;
-//    }	
-//	
-	
     @Produces
     @Default
     public EntityManager getEntityManager() {
-    	return this.em;
-        // return this.entityManagerFactory.createEntityManager();
+        return this.emf.createEntityManager();
+    }
+
+    public void close(@Disposes EntityManager entityManager) {
+        // Destroy Entity Manager
+        if (!entityManager.getTransaction().getRollbackOnly()
+                && entityManager.getTransaction().isActive()) {
+            // Only commit when rransaction is active and
+            //  transaction was not rollbacked
+            entityManager.getTransaction().commit();
+        }
+        entityManager.close();
     }
    
 }
