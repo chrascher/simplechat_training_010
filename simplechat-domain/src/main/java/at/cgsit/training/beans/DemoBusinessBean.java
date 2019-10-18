@@ -1,19 +1,16 @@
 package at.cgsit.training.beans;
 
-import java.text.DecimalFormat;
-
 import javax.enterprise.context.Dependent;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
-import at.cgsit.training.persistence.SimpleUsage;
+import at.cgsit.training.persistence.ChatUserimpleDao;
 
 
 @Dependent
 public class DemoBusinessBean {
 	
 	@Inject
-	private SimpleUsage simple;
+	private ChatUserimpleDao simple;
 	
 	public String calculate() {
 		
