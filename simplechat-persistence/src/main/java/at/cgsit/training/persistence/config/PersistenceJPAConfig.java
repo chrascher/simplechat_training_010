@@ -40,9 +40,11 @@ import com.google.common.base.Preconditions;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource({ "classpath:persistence-h2.properties" })
+// extract to properties : @PropertySource({ "classpath:persistence-postgresql.properties" })
 @ComponentScan({ "at.cgsit.training.persistence","at.cgsit.training.persistence.repository" })
-@EnableJpaRepositories(basePackages = "at.cgsit.training.persistence.repository")
+@EnableJpaRepositories(
+        basePackages = "at.cgsit.training.persistence.repository",
+        entityManagerFactoryRef="entityManagerFactoryBean")
 public class PersistenceJPAConfig {
 
     @Autowired
@@ -52,7 +54,7 @@ public class PersistenceJPAConfig {
         super();
     }
 
-    @Bean
+    @Bean()
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
         final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());

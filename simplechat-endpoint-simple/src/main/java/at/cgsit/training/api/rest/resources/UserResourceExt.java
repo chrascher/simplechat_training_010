@@ -33,6 +33,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Extended User Resource
@@ -40,13 +41,14 @@ import org.springframework.beans.factory.annotation.Autowired;
  *  @Author CGS-IT Solutions @2019
  */
 @Path("userext")
+@Component
 public class UserResourceExt {
 
 	final static Logger logger = Logger.getLogger(UserResourceExt.class);
 	
 	// inject the chat user data access object 
 	@Autowired
-	private ChatUserImplDao chatUserDao;
+	private ChatUserImplDao chatUserImplDao;
 	
     @GET
     @Path("useraccount/{id}")
@@ -57,9 +59,9 @@ public class UserResourceExt {
     	
     	Long userId = Long.parseLong(id);
 
-    	ChatUser userEntity = chatUserDao.findChatUser(userId);
+    	ChatUser userEntity = chatUserImplDao.findChatUser(userId);
     	
-    	ChatUser user2 = chatUserDao.findChatUserBySelect(userId);
+    	ChatUser user2 = chatUserImplDao.findChatUserBySelect(userId);
     	
     	UserAccount obj = new UserAccount();
     	obj.setUser_id( userEntity.getId().toString() );
