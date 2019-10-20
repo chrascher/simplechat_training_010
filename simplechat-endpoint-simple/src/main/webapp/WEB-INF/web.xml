@@ -12,11 +12,11 @@
    
 	<servlet>
 		<servlet-name>Very Simple</servlet-name>
-		<servlet-class>at.cgsit.training.VerySimpleServlet</servlet-class>
+		<servlet-class>at.cgsit.training.servlets.SimpleServletFour</servlet-class>
 	</servlet>
     <servlet-mapping>	
         <servlet-name>Very Simple</servlet-name>
-        <url-pattern>/verySimpleServlet</url-pattern>
+        <url-pattern>/simple-servlet-four</url-pattern>
     </servlet-mapping>
     
     <servlet>

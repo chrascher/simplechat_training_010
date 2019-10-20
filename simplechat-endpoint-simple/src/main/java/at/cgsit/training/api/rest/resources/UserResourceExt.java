@@ -1,8 +1,26 @@
+/*
+ * (C) Copyright 2019 CGS IT-Solutions (http://www.cgs.at/).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
 package at.cgsit.training.api.rest.resources;
 
 import at.cgsit.training.AppScopedTwo;
 import at.cgsit.training.ApplicationInformation;
 import at.cgsit.training.api.rest.dto.UserAccount;
+import at.cgsit.training.persistence.ChatUserimpleDao;
+import at.cgsit.training.persistence.entities.ChatUser;
 
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
@@ -18,12 +36,20 @@ import javax.ws.rs.core.MediaType;
 
 import org.apache.log4j.Logger;
 
+/**
+ * Extended User Resource
+ *
+ *  @Author CGS-IT Solutions @2019
+ */
 @Path("userext")
 @Dependent
 public class UserResourceExt {
 
 	final static Logger logger = Logger.getLogger(UserResourceExt.class);
 	
+	// inject the chat user data access object 
+	@Inject
+	private ChatUserimpleDao chatUserDao;
 	
     @GET
     @Path("useraccount/{id}")
@@ -32,15 +58,17 @@ public class UserResourceExt {
     	
     	logger.info("id erhalten: " + id );
     	
-    	if( !"1".equalsIgnoreCase(id) ) {
-    		throw new RuntimeException("Ein Fehler ist aufgetreten");
-    	}
-    	// database.find(id);
+    	Long userId = Long.parseLong(id);
+
+    	ChatUser userEntity = chatUserDao.findChatUser(userId);
+    	
+    	ChatUser user2 = chatUserDao.findChatUserBySelect(userId);
     	
     	UserAccount obj = new UserAccount();
-    	obj.setUser_id("1");
-    	obj.setUsername("my nick name" );
-    	obj.setEmail( "john@cgs.at");
+    	obj.setUser_id( userEntity.getId().toString() );
+    	obj.setUsername( userEntity.getNicname() );
+    	obj.setEmail( userEntity.getEmail() );
+    	
     	return obj;
     }
    

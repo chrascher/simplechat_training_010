@@ -1,8 +1,8 @@
 package at.cgsit.training.api.rest.dto;
 
 /**
- * 
- * @author cgssc
+ *
+ * @Author CGS-IT Solutions @2019
  */
 public class UserAccount {
 

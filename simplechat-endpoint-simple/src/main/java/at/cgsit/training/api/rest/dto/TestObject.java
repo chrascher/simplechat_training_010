@@ -14,23 +14,33 @@
  * limitations under the License.
  *
  */
-package at.cgsit.training.api.soap;
+package at.cgsit.training.api.rest.dto;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
+/**
+ * test object
+ * @Author CGS-IT Solutions @2019
+ */
+public class TestObject {
+	
+	String vorname;
+	
+	String nachname;
 
-@WebService(
-        name = "UserSoap"
-)
-public class UserSoap {
+	public String getVorname() {
+		return vorname;
+	}
 
-	/**
-	 * 
-	 * @return
-	 */
-    @WebMethod
-    public String message() {
-        return "Hello World";
-    }
+	public void setVorname(String vorname) {
+		this.vorname = vorname;
+	}
+
+	public String getNachname() {
+		return nachname;
+	}
+
+	public void setNachname(String nachname) {
+		this.nachname = nachname;
+	}
+	
 
 }
