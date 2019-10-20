@@ -16,14 +16,11 @@
  */
 package at.cgsit.training.api.rest.resources;
 
-import at.cgsit.training.AppScopedTwo;
-import at.cgsit.training.ApplicationInformation;
 import at.cgsit.training.api.rest.dto.UserAccount;
-import at.cgsit.training.persistence.ChatUserimpleDao;
+import at.cgsit.training.persistence.ChatUserImplDao;
 import at.cgsit.training.persistence.entities.ChatUser;
 
-import javax.enterprise.context.Dependent;
-import javax.inject.Inject;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -35,6 +32,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Extended User Resource
@@ -42,14 +40,13 @@ import org.apache.log4j.Logger;
  *  @Author CGS-IT Solutions @2019
  */
 @Path("userext")
-@Dependent
 public class UserResourceExt {
 
 	final static Logger logger = Logger.getLogger(UserResourceExt.class);
 	
 	// inject the chat user data access object 
-	@Inject
-	private ChatUserimpleDao chatUserDao;
+	@Autowired
+	private ChatUserImplDao chatUserDao;
 	
     @GET
     @Path("useraccount/{id}")

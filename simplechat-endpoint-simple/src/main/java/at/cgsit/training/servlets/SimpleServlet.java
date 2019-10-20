@@ -17,8 +17,8 @@
 package at.cgsit.training.servlets;
 
 import at.cgsit.training.beans.DemoBusinessBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +33,7 @@ import java.time.format.DateTimeFormatter;
 @WebServlet(name = "SimpleServlet" , urlPatterns = "/simple-servlet")
 public class SimpleServlet extends HttpServlet {
 
-    @Inject
+    @Autowired
     DemoBusinessBean bean;
 
 

@@ -1,21 +1,18 @@
 package at.cgsit.training.beans;
 
-import javax.enterprise.context.Dependent;
-import javax.inject.Inject;
-
 import org.apache.log4j.Logger;
 
-import at.cgsit.training.AppScopedTwo;
-import at.cgsit.training.persistence.ChatUserimpleDao;
+import at.cgsit.training.persistence.ChatUserImplDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 
 
-@Dependent
 public class DemoBusinessBean {
 	
 	final static Logger logger = Logger.getLogger(DemoBusinessBean.class);
 	
-	@Inject
-	private ChatUserimpleDao simple;
+	@Autowired
+	private ChatUserImplDao simple;
 	
 	public String calculate() {
 		

@@ -5,18 +5,16 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import at.cgsit.training.persistence.ChatUserimpleDao;
+import at.cgsit.training.persistence.ChatUserImplDao;
 import at.cgsit.training.persistence.entities.ChatUser;
 
-import java.util.List;
-
 @Ignore
-public class TestChatUserimpleDao {
+public class TestChatUserImplDao {
 
     @Test
     public void testOne () {
 
-        ChatUserimpleDao usage  = new ChatUserimpleDao();
+        ChatUserImplDao usage  = new ChatUserImplDao();
         ChatUser newUser = usage.doSomehting();
         Assert.assertNotNull(newUser);
 

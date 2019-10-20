@@ -17,9 +17,8 @@
 package at.cgsit.training.servlets;
 
 import at.cgsit.training.AppScopedTwo;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
@@ -38,10 +37,9 @@ initParams = {
         @WebInitParam(name = "lastName", value = "Doe")
     }
 )
-@RequestScoped
 public class SimpleServletTwo extends HttpServlet {
 
-	@Inject
+	@Autowired
 	private AppScopedTwo appInfo;
 	
     private String defaultMessage;

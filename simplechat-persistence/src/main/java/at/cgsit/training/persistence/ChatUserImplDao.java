@@ -2,18 +2,17 @@ package at.cgsit.training.persistence;
 
 import at.cgsit.training.persistence.dao.ChatUserDao;
 import at.cgsit.training.persistence.entities.ChatUser;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.enterprise.context.Dependent;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@Dependent
-public class ChatUserimpleDao {
 
-    @Inject
+public class ChatUserImplDao {
+
+    @Autowired
     private EntityManager em;
 	
 	// @Transactional(Transactional.TxType.REQUIRES_NEW)

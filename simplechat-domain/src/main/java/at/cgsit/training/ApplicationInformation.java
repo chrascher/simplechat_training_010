@@ -1,9 +1,9 @@
 package at.cgsit.training;
 
-import javax.enterprise.context.ApplicationScoped;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 
-// TODO CDI Container config for tomcat 9.0s
-@ApplicationScoped
+@Scope("singleton")
 public class ApplicationInformation {
 
     public String helloWorld() {

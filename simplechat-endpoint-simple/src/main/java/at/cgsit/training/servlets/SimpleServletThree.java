@@ -19,7 +19,6 @@ package at.cgsit.training.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +26,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import at.cgsit.training.beans.RequestScopedBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Servlet implementation class ServletThree
@@ -35,7 +35,7 @@ import at.cgsit.training.beans.RequestScopedBean;
 public class SimpleServletThree extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	@Inject
+	@Autowired
 	RequestScopedBean rsBean;
 	
     /**

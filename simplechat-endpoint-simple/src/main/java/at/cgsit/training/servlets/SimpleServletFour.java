@@ -18,8 +18,6 @@ package at.cgsit.training.servlets;
 
 import java.io.IOException;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,17 +25,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import at.cgsit.training.beans.DemoBusinessBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Servlet implementation class VerySimpleServlet
  * this servlet is not annotated. instead it is registered
  * as servlet in th web.xml file
  */
-@RequestScoped
 public class SimpleServletFour extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@Inject
+	@Autowired
 	DemoBusinessBean bean;
 
     /**

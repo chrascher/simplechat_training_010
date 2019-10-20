@@ -2,10 +2,7 @@ package at.cgsit.training.beans;
 
 import java.text.DecimalFormat;
 
-import javax.enterprise.context.RequestScoped;
 
-
-@RequestScoped
 public class RequestScopedBean {
 	
 	private double num;

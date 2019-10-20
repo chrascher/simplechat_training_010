@@ -3,17 +3,16 @@
  */
 package at.cgsit.training;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
-
 import org.apache.log4j.Logger;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 
 
 /**
  * @author cgssc
  *
  */
-@ApplicationScoped
+@Scope("singleton")
 public class AppScopedTwo {
 
 	final static Logger logger = Logger.getLogger(AppScopedTwo.class);
