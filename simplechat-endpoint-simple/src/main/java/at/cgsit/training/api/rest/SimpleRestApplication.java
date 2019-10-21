@@ -19,52 +19,22 @@ package at.cgsit.training.api.rest;
 
 import at.cgsit.training.api.rest.resources.UserResource;
 import at.cgsit.training.api.rest.resources.UserResourceExt;
-import org.glassfish.jersey.server.ResourceConfig;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
 
-import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
-@ApplicationPath("api/rest")
-public class SimpleRestApplication extends ResourceConfig {
+public class SimpleRestApplication extends Application {
 
     public SimpleRestApplication() {
 
-        packages( "at.cgsit.training");
-        
-        register(UserResource.class);
-        register(UserResourceExt.class);
     }
 
-
-
-    /*
     public Set<Class<?>> getClasses() {
         Set<Class<?>> classes = new HashSet<>();
         classes.add(UserResource.class);
         classes.add(UserResourceExt.class);
         return classes;
     }
-    */
-
-
-    /*
-    @Bean
-    public FilterRegistrationBean filterRegistrationBean() {
-        Map<String, String> initParams = new HashMap<>();
-        initParams.put("javax.ws.rs.Application", RestEasyConfig.class.getCanonicalName());
-
-        FilterRegistrationBean registrationBean = new FilterRegistrationBean();
-        registrationBean.setFilter(new FilterDispatcher());
-        registrationBean.setInitParameters(initParams);
-        return registrationBean;
-    }
-
-     */
-
-
-
 
 }

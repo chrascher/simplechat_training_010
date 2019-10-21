@@ -4,6 +4,33 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <context-param>
+        <param-name>resteasy.servlet.mapping.prefix</param-name>
+        <param-value>/api/rest</param-value>
+    </context-param>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/META-INF/applicationContext.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.jboss.resteasy.plugins.spring.SpringContextLoaderListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>RESTEasyService</servlet-name>
+        <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>at.cgsit.training.api.rest.SimpleRestApplication</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RESTEasyService</servlet-name>
+        <url-pattern>/api/rest/*</url-pattern>
+    </servlet-mapping>
+
     <!-- see ApplicationInitializers
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -18,38 +45,41 @@
         <listener-class>org.jboss.resteasy.plugins.spring.SpringContextLoaderListener</listener-class>
     </listener>
     -->
-    
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:applicationContext.xml</param-value>
-    </context-param>
 
-    <listener>
-        <listener-class>
-            com.sun.xml.ws.transport.http.servlet.WSServletContextListener
-        </listener-class>
-    </listener>
-   
-	<servlet>
-		<servlet-name>Very Simple</servlet-name>
-		<servlet-class>at.cgsit.training.servlets.SimpleServletFour</servlet-class>
-	</servlet>
-    <servlet-mapping>	
-        <servlet-name>Very Simple</servlet-name>
-        <url-pattern>/simple-servlet-four</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>soap</servlet-name>
-        <servlet-class>
-            com.sun.xml.ws.transport.http.servlet.WSServlet
-        </servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>	
-        <servlet-name>soap</servlet-name>
-        <url-pattern>/api/soap</url-pattern>
-    </servlet-mapping>
+    <!--    <context-param>-->
+    <!--        <param-name>contextConfigLocation</param-name>-->
+    <!--        <param-value>classpath:applicationContext.xml</param-value>-->
+    <!--    </context-param>-->
+    <!--    <listener>-->
+    <!--        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+    <!--    </listener>-->
+
+    <!--    <listener>-->
+    <!--        <listener-class>-->
+    <!--            com.sun.xml.ws.transport.http.servlet.WSServletContextListener-->
+    <!--        </listener-class>-->
+    <!--    </listener>-->
+    <!--   -->
+    <!--	<servlet>-->
+    <!--		<servlet-name>Very Simple</servlet-name>-->
+    <!--		<servlet-class>at.cgsit.training.servlets.SimpleServletFour</servlet-class>-->
+    <!--	</servlet>-->
+    <!--    <servlet-mapping>	-->
+    <!--        <servlet-name>Very Simple</servlet-name>-->
+    <!--        <url-pattern>/simple-servlet-four</url-pattern>-->
+    <!--    </servlet-mapping>-->
+
+    <!--    <servlet>-->
+    <!--        <servlet-name>soap</servlet-name>-->
+    <!--        <servlet-class>-->
+    <!--            com.sun.xml.ws.transport.http.servlet.WSServlet-->
+    <!--        </servlet-class>-->
+    <!--        <load-on-startup>1</load-on-startup>-->
+    <!--    </servlet>-->
+    <!--    <servlet-mapping>	-->
+    <!--        <servlet-name>soap</servlet-name>-->
+    <!--        <url-pattern>/api/soap</url-pattern>-->
+    <!--    </servlet-mapping>-->
 
     <!--
     <error-page>

@@ -16,19 +16,19 @@
  */
 package at.cgsit.training.api.soap;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
+//import javax.jws.WebMethod;
+//import javax.jws.WebService;
 
-@WebService(
-        name = "UserSoap"
-)
+//@WebService(
+//        name = "UserSoap"
+//)
 public class UserSoap {
 
 	/**
 	 * 
 	 * @return
 	 */
-    @WebMethod
+//    @WebMethod
     public String message() {
         return "Hello World";
     }

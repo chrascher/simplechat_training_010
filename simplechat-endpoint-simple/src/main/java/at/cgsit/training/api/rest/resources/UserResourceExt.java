@@ -19,21 +19,14 @@ package at.cgsit.training.api.rest.resources;
 import at.cgsit.training.api.rest.dto.UserAccount;
 import at.cgsit.training.persistence.ChatUserImplDao;
 import at.cgsit.training.persistence.entities.ChatUser;
-
-
-import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 
 /**
  * Extended User Resource
@@ -60,8 +53,8 @@ public class UserResourceExt {
     	Long userId = Long.parseLong(id);
 
     	ChatUser userEntity = chatUserImplDao.findChatUser(userId);
-    	
-    	ChatUser user2 = chatUserImplDao.findChatUserBySelect(userId);
+
+        ChatUser user2 = chatUserImplDao.findChatUserBySelect(userId);
     	
     	UserAccount obj = new UserAccount();
     	obj.setUser_id( userEntity.getId().toString() );

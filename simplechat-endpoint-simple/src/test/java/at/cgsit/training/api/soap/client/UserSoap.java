@@ -1,9 +1,9 @@
 
 package at.cgsit.training.api.soap.client;
 
-import javax.jws.WebMethod;
-import javax.jws.WebResult;
-import javax.jws.WebService;
+//import javax.jws.WebMethod;
+//import javax.jws.WebResult;
+//import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
 import javax.xml.ws.RequestWrapper;
@@ -16,7 +16,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "UserSoap", targetNamespace = "http://soap.api.training.cgsit.at/")
+//@WebService(name = "UserSoap", targetNamespace = "http://soap.api.training.cgsit.at/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -28,8 +28,8 @@ public interface UserSoap {
      * @return
      *     returns java.lang.String
      */
-    @WebMethod
-    @WebResult(targetNamespace = "")
+//    @WebMethod
+//    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "message", targetNamespace = "http://soap.api.training.cgsit.at/", className = "at.cgsit.training.api.soap.client.Message")
     @ResponseWrapper(localName = "messageResponse", targetNamespace = "http://soap.api.training.cgsit.at/", className = "at.cgsit.training.api.soap.client.MessageResponse")
     @Action(input = "http://soap.api.training.cgsit.at/UserSoap/messageRequest", output = "http://soap.api.training.cgsit.at/UserSoap/messageResponse")

@@ -1,6 +1,5 @@
 package at.cgsit.training;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
 @Scope("singleton")
