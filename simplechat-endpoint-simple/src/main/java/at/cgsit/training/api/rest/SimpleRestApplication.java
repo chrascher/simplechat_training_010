@@ -27,23 +27,28 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.*;
 
-@Component
 @ApplicationPath("api/rest")
-public class SimpleRestApplication extends Application {
+public class SimpleRestApplication extends ResourceConfig {
 
-    /*
     public SimpleRestApplication() {
+
+        packages( "at.cgsit.training");
+        
         register(UserResource.class);
         register(UserResourceExt.class);
     }
-     */
 
+
+
+    /*
     public Set<Class<?>> getClasses() {
         Set<Class<?>> classes = new HashSet<>();
         classes.add(UserResource.class);
         classes.add(UserResourceExt.class);
         return classes;
     }
+    */
+
 
     /*
     @Bean
