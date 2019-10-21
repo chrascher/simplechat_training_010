@@ -1,6 +1,6 @@
-package at.cgsit.training.persistence.dao;
+package at.cgsit.training.persistence.genericdao;
 
-import at.cgsit.training.persistence.daobase.JpaDao;
+import at.cgsit.training.persistence.common.JpaDao;
 import at.cgsit.training.persistence.entities.ChatUser;
 
 /**

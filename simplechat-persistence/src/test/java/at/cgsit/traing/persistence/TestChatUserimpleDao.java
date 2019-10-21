@@ -5,10 +5,8 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import at.cgsit.training.persistence.ChatUserimpleDao;
+import at.cgsit.training.persistence.dao.ChatUserimpleDao;
 import at.cgsit.training.persistence.entities.ChatUser;
-
-import java.util.List;
 
 @Ignore
 public class TestChatUserimpleDao {

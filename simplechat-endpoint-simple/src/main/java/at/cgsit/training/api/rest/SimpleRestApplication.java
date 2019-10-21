@@ -16,10 +16,37 @@
  */
 package at.cgsit.training.api.rest;
 
+import at.cgsit.training.api.rest.json.JacksonJavaTimeConfiguration;
+import at.cgsit.training.api.rest.resources.ChatMessageResource;
+import at.cgsit.training.api.rest.resources.UserResource;
+import at.cgsit.training.api.rest.resources.UserResourceExt;
+
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
+import java.util.HashSet;
+import java.util.Set;
 
 @ApplicationPath("api/rest")
 public class SimpleRestApplication extends Application {
-	
+
+    @Override
+    public  Set<Class<?>> getClasses() {
+        HashSet<Class<?>> set = new HashSet<>();
+
+        // filters(interceptors)
+        registerFilters(set);
+
+        // Add Rest Resource Services
+        set.add(UserResource.class);
+        set.add(UserResourceExt.class);
+        set.add(ChatMessageResource.class);
+
+        return set;
+    }
+
+    protected void registerFilters(HashSet<Class<?>> set) {
+        // to serialize/deserialize LocalDate in Json
+        set.add(JacksonJavaTimeConfiguration.class);
+
+    }
 }

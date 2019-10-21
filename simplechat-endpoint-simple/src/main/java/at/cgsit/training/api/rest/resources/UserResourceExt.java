@@ -16,10 +16,8 @@
  */
 package at.cgsit.training.api.rest.resources;
 
-import at.cgsit.training.AppScopedTwo;
-import at.cgsit.training.ApplicationInformation;
 import at.cgsit.training.api.rest.dto.UserAccount;
-import at.cgsit.training.persistence.ChatUserimpleDao;
+import at.cgsit.training.persistence.dao.ChatUserimpleDao;
 import at.cgsit.training.persistence.entities.ChatUser;
 
 import javax.enterprise.context.Dependent;

@@ -1,30 +1,41 @@
-package at.cgsit.training.api.rest.dto;
+package at.cgsit.training.persistence.entities;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
  * @Author CGS-IT Solutions @2019
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class ChatMessage {
+@Entity
+@Table( name="chat_message")
+public class ChatMessageEntity {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+
+    @Column(name="user_name", length= 100, nullable = false)
     private String userName;
 
+    @Column(name="chat_room", length= 50, nullable = true)
     private String chatRoom;
 
+    @Column(name="chat_message", length= 250, nullable = false)
     private String chatMessage;
 
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @Column(name="creation_time", nullable = true)
     private LocalDateTime creationTime;
 
     private Boolean isImportant;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
@@ -50,12 +61,10 @@ public class ChatMessage {
         this.chatMessage = chatMessage;
     }
 
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     public LocalDateTime getCreationTime() {
         return creationTime;
     }
 
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
     public void setCreationTime(LocalDateTime creationTime) {
         this.creationTime = creationTime;
     }

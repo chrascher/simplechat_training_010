@@ -5,8 +5,7 @@ import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 
-import at.cgsit.training.AppScopedTwo;
-import at.cgsit.training.persistence.ChatUserimpleDao;
+import at.cgsit.training.persistence.dao.ChatUserimpleDao;
 
 
 @Dependent

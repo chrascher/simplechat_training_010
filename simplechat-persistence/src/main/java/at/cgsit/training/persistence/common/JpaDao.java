@@ -1,4 +1,4 @@
-package at.cgsit.training.persistence.daobase;
+package at.cgsit.training.persistence.common;
 
 import at.cgsit.training.persitence.dao.Dao;
 
