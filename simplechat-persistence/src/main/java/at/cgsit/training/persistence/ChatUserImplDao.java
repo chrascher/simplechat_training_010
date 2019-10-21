@@ -15,28 +15,28 @@ import java.util.List;
 public class ChatUserImplDao {
 
     // @Autowired
-    @PersistenceContext
-    private EntityManager em;
+    // @PersistenceContext
+    // private EntityManager em;
 	
 	// @Transactional(Transactional.TxType.REQUIRES_NEW)
     public ChatUser doSomehting() {
 
-        em.getTransaction().begin();	
+        // em.getTransaction().begin();
 		
 	    ChatUser cu = new ChatUser();
         cu.setNicname("testnic");
         cu.setEmail("testnic@cgs.at");
 
-        em.persist(cu);
+        // em.persist(cu);
         
-        em.getTransaction().commit();
+        // em.getTransaction().commit();
         
         return cu;
     }
 
     public List<ChatUser> findAll() {
-        Query query = em.createQuery("SELECT user FROM ChatUser user");
-        return query.getResultList();
+        // Query query = em.createQuery("SELECT user FROM ChatUser user");
+        return null; // query.getResultList();
     }
 
     /**
@@ -45,7 +45,7 @@ public class ChatUserImplDao {
      */
 	public ChatUser findChatUser(Long userId) {
          
-         ChatUser result = em.find(ChatUser.class, userId);	
+         ChatUser result = null ; // em.find(ChatUser.class, userId);
          if (result == null) {
 			throw new RuntimeException("ChatUser account nicht gefunden");
   		 }    
@@ -54,7 +54,7 @@ public class ChatUserImplDao {
 
 	public ChatUser findChatUserBySelect(Long userId) {
         
-        Query query = em.createQuery("SELECT user FROM ChatUser user WHERE user.id = :userid");
+        Query query = null; // em.createQuery("SELECT user FROM ChatUser user WHERE user.id = :userid");
         query.setParameter("userid", userId);
         
         ChatUser result = (ChatUser) query.getSingleResult();
