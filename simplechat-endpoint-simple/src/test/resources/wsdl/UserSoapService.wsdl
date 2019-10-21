@@ -7,10 +7,13 @@
         xmlns:tns="http://soap.api.training.cgsit.at/"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns="http://schemas.xmlsoap.org/wsdl/"
-        targetNamespace="http://soap.api.training.cgsit.at/" name="UserSoapService">
+        targetNamespace="http://soap.api.training.cgsit.at/" name="UserSoapService"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3.org/2007/05/addressing/metadata ">
     <types>
         <xsd:schema>
-            <xsd:import namespace="http://soap.api.training.cgsit.at/" schemaLocation="http://localhost:5555/simplechat-endpoint-simple/api/soap?xsd=1"/>
+            <xsd:import namespace="http://soap.api.training.cgsit.at/"
+                        schemaLocation="http://localhost:8080/simplechat_endpoint_simple_war/api/soap?xsd=1"/>
         </xsd:schema>
     </types>
     <message name="message">
@@ -22,7 +25,8 @@
     <portType name="UserSoap">
         <operation name="message">
             <input wsam:Action="http://soap.api.training.cgsit.at/UserSoap/messageRequest" message="tns:message"/>
-            <output wsam:Action="http://soap.api.training.cgsit.at/UserSoap/messageResponse" message="tns:messageResponse"/>
+            <output wsam:Action="http://soap.api.training.cgsit.at/UserSoap/messageResponse"
+                    message="tns:messageResponse"/>
         </operation>
     </portType>
     <binding name="UserSoapPortBinding" type="tns:UserSoap">
@@ -39,7 +43,7 @@
     </binding>
     <service name="UserSoapService">
         <port name="UserSoapPort" binding="tns:UserSoapPortBinding">
-            <soap:address location="http://localhost:5555/simplechat-endpoint-simple/api/soap"/>
+            <soap:address location="http://localhost:8080/simplechat_endpoint_simple_war/api/soap"/>
         </port>
     </service>
 </definitions>

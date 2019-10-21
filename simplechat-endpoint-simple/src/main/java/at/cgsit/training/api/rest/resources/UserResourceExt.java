@@ -55,7 +55,7 @@ public class UserResourceExt {
     @Path("useraccount/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public UserAccount getDemoObject ( @PathParam("id") String id ) {   
-    	
+
     	logger.info("id erhalten: " + id );
     	
     	Long userId = Long.parseLong(id);
