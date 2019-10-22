@@ -27,12 +27,11 @@ public class ChatMessageResource {
     @Inject
     ChatMessageDao dao;
 
-
     @PostConstruct
     public void init() {
         // add a starting dummy message
         ChatMessageDto newMsg = new ChatMessageDto();
-        newMsg.setChatMessage("test Message dummy");
+        newMsg.setChatMessage("Initial Message dummy");
         newMsg.setChatRoom("default");
         newMsg.setCreationTime(LocalDateTime.now());
         messages.add(newMsg);
@@ -58,11 +57,12 @@ public class ChatMessageResource {
 
         dao.insertChatMessage(newObject);
 
+        //set HTTP code to "201 Created"
+        response.setStatus(HttpServletResponse.SC_CREATED);
 
         messages.add(input);
     }
 
-    // ChatMessageQueryParam input,
     @GET
     @Path("chat-message")
     @Produces(MediaType.APPLICATION_JSON)

@@ -17,7 +17,8 @@
 package at.cgsit.training.api.rest.dto;
 
 /**
- * test object
+ * test object. use to test additonal serializaton
+ *
  * @Author CGS-IT Solutions @2019
  */
 public class TestObjectDto {

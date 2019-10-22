@@ -17,6 +17,7 @@ import javax.persistence.*;
  * </ol>
  */
 @Entity
+@Table(name = "chat_room")
 public class ChatRoomEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -43,6 +44,16 @@ public class ChatRoomEntity implements Serializable {
     @Column(name = "temp_room", nullable = true)
     private Boolean tempRoom;
 
+    public Boolean isDefaultRoom() {
+        return defaultRoom;
+    }
+    public Boolean getDefaultRoom() {
+        return defaultRoom;
+    }
+
+    public void setDefaultRoom(Boolean defaultRoom) {
+        this.defaultRoom = defaultRoom;
+    }
 
     public ChatRoomEntity() {
         super();
@@ -70,14 +81,6 @@ public class ChatRoomEntity implements Serializable {
 
     public void setMaxUsers(int maxUsers) {
         this.maxUsers = maxUsers;
-    }
-
-    public Boolean getDefaultRoom() {
-        return defaultRoom;
-    }
-
-    public void setDefaultRoom(Boolean defaultRoom) {
-        this.defaultRoom = defaultRoom;
     }
 
 	public Boolean getTempRoom() {
