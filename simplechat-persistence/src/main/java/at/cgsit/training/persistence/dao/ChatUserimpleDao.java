@@ -1,6 +1,6 @@
 package at.cgsit.training.persistence.dao;
 
-import at.cgsit.training.persistence.entities.ChatUser;
+import at.cgsit.training.persistence.entities.ChatUserEntity;
 
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
@@ -15,11 +15,11 @@ public class ChatUserimpleDao {
     private EntityManager em;
 
     // @Transactional(Transactional.TxType.REQUIRES_NEW)
-    public ChatUser doSomehting() {
+    public ChatUserEntity doSomehting() {
 
         em.getTransaction().begin();
 
-        ChatUser cu = new ChatUser();
+        ChatUserEntity cu = new ChatUserEntity();
         cu.setNicname("testnic");
         cu.setEmail("testnic@cgs.at");
 
@@ -30,8 +30,8 @@ public class ChatUserimpleDao {
         return cu;
     }
 
-    public List<ChatUser> findAll() {
-        Query query = em.createQuery("SELECT user FROM ChatUser user");
+    public List<ChatUserEntity> findAll() {
+        Query query = em.createQuery("SELECT user FROM ChatUserEntity user");
         return query.getResultList();
     }
 
@@ -40,20 +40,20 @@ public class ChatUserimpleDao {
      *
      * @param userId
      */
-    public ChatUser findChatUser(Long userId) {
+    public ChatUserEntity findChatUser(Long userId) {
 
-        ChatUser result = em.find(ChatUser.class, userId);
+        ChatUserEntity result = em.find(ChatUserEntity.class, userId);
         if (result == null) {
             throw new RuntimeException("ChatUser account nicht gefunden");
         }
         return result;
     }
 
-    public ChatUser findChatUserBySelect(Long userId) {
+    public ChatUserEntity findChatUserBySelect(Long userId) {
 
-        Query query = em.createQuery("SELECT user FROM ChatUser user WHERE user.id = :userid");
+        Query query = em.createQuery("SELECT user FROM ChatUserEntity user WHERE user.id = :userid");
         query.setParameter("userid", userId);
-        ChatUser result = (ChatUser) query.getSingleResult();
+        ChatUserEntity result = (ChatUserEntity) query.getSingleResult();
         return result;
     }
 }

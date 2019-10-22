@@ -1,16 +1,16 @@
 package at.cgsit.training.persistence.genericdao;
 
 import at.cgsit.training.persistence.common.JpaDao;
-import at.cgsit.training.persistence.entities.ChatUser;
+import at.cgsit.training.persistence.entities.ChatUserEntity;
 
 /**
  * 
  */
-public class ChatUserDao extends JpaDao<ChatUser> {
+public class ChatUserDao extends JpaDao<ChatUserEntity> {
 
     @Override
-    protected Class<ChatUser> getEntityClass() {
-        return ChatUser.class;
+    protected Class<ChatUserEntity> getEntityClass() {
+        return ChatUserEntity.class;
     }
 
 

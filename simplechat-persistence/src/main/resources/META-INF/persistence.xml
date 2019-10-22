@@ -13,7 +13,7 @@
         <class>at.cgsit.training.UserAccount</class>
          -->
         
-    	<class>at.cgsit.training.persistence.entities.ChatUser</class>
+    	<class>at.cgsit.training.persistence.entities.ChatUserEntity</class>
        
         <properties>
             <!-- DB Driver -->

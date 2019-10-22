@@ -10,7 +10,7 @@ import java.util.Date;
  */
 @Entity
 @Table( name="chat_user")
-public class ChatUser {
+public class ChatUserEntity {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)

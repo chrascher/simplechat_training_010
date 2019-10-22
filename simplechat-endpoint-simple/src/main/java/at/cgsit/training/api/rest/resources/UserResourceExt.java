@@ -18,7 +18,7 @@ package at.cgsit.training.api.rest.resources;
 
 import at.cgsit.training.api.rest.dto.UserAccount;
 import at.cgsit.training.persistence.dao.ChatUserimpleDao;
-import at.cgsit.training.persistence.entities.ChatUser;
+import at.cgsit.training.persistence.entities.ChatUserEntity;
 
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
@@ -58,9 +58,9 @@ public class UserResourceExt {
     	
     	Long userId = Long.parseLong(id);
 
-    	ChatUser userEntity = chatUserDao.findChatUser(userId);
+    	ChatUserEntity userEntity = chatUserDao.findChatUser(userId);
     	
-    	ChatUser user2 = chatUserDao.findChatUserBySelect(userId);
+    	ChatUserEntity user2 = chatUserDao.findChatUserBySelect(userId);
     	
     	UserAccount obj = new UserAccount();
     	obj.setUser_id( userEntity.getId().toString() );

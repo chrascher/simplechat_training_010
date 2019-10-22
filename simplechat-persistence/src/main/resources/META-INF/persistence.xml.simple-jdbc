@@ -10,7 +10,7 @@
         <class>at.cgsit.training.UserAccount</class>
          -->
         
-    	<class>at.cgsit.training.persistence.entities.ChatUser</class>
+    	<class>at.cgsit.training.persistence.entities.ChatUserEntity</class>
        
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />

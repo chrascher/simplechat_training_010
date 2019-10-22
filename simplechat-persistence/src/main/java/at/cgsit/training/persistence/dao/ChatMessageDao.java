@@ -1,7 +1,6 @@
 package at.cgsit.training.persistence.dao;
 
 import at.cgsit.training.persistence.entities.ChatMessageEntity;
-import at.cgsit.training.persistence.entities.ChatUser;
 
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
