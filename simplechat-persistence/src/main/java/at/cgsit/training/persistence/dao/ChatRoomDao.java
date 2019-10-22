@@ -35,8 +35,7 @@ public class ChatRoomDao {
     }
 
     /**
-     * find normal or temporary chat rooms.
-     *
+     * find normal or temporary chat rooms
      * @param temporaryRooms
      * @return
      */
