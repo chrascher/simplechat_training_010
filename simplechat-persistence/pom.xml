@@ -12,28 +12,25 @@
     <artifactId>simplechat-persistence</artifactId>
 
     <dependencies>
-
         <dependency>
             <groupId>at.cgsit.training</groupId>
             <artifactId>simplechat-persistence-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>${org.springframework.version}</version>
+            <!-- <version>${org.springframework.version}</version> -->
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${org.springframework.version}</version>
+             <version>${springframework.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.4.4.Final</version>
+            <version>${version.hibernate}</version>
         </dependency>
         <dependency>
             <groupId>javax.transaction</groupId>
@@ -43,7 +40,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.4.4.Final</version>
+            <version>${version.hibernate}</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.logging</groupId>
@@ -73,7 +70,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.2.6</version>
+            <version>${postgresql.version}</version>
         </dependency>
 
         <dependency>
@@ -120,7 +117,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${org.springframework.version}</version>
+            <version>${springframework.version}</version>
             <scope>test</scope>
         </dependency>
 <!--        <dependency>-->
