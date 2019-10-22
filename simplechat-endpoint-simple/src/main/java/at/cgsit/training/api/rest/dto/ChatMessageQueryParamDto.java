@@ -2,7 +2,7 @@ package at.cgsit.training.api.rest.dto;
 
 import java.time.LocalDateTime;
 
-public class ChatMessageQueryParam {
+public class ChatMessageQueryParamDto {
 
     private String chatRoom;
 

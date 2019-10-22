@@ -1,3 +1,4 @@
+import javax.ejb.Local;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -15,8 +16,10 @@ public class TestMain {
         TemporalAccessor parse = formatter.parse(toParse);
 
         LocalDateTime localDateTime = LocalDateTime.from(parse);
-
         System.out.println(localDateTime.toString());
+
+        String format = formatter.format(LocalDateTime.now());
+        System.out.println("formated local date time: " + localDateTime.toString());
 
         customPattern();
     }

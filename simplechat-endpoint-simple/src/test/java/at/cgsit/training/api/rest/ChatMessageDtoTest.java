@@ -1,7 +1,7 @@
 package at.cgsit.training.api.rest;
 
 import at.cgsit.training.api.provider.CustomJacksonProvider;
-import at.cgsit.training.api.rest.dto.ChatMessage;
+import at.cgsit.training.api.rest.dto.ChatMessageDto;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -13,9 +13,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class ChatMessageTest {
+public class ChatMessageDtoTest {
 
     private static final String REST_URI
             = "http://localhost:8080/simplechat_endpoint_simple_war/api/rest/chat/chat-message";
@@ -35,7 +34,7 @@ public class ChatMessageTest {
     @Test
     public void chatMessagePutTest() {
 
-        ChatMessage newMsg = new ChatMessage();
+        ChatMessageDto newMsg = new ChatMessageDto();
         newMsg.setChatMessage("test Message 2");
         newMsg.setChatRoom("default");
         newMsg.setCreationTime(LocalDateTime.now());
@@ -47,11 +46,11 @@ public class ChatMessageTest {
     @Test
     public void chatMessageGetList() {
 
-        List<ChatMessage> result = null;
+        List<ChatMessageDto> result = null;
 
         result  =  client.target(REST_URI)
                 .request(MediaType.APPLICATION_JSON)
-                .get(new GenericType<List<ChatMessage>>() { });
+                .get(new GenericType<List<ChatMessageDto>>() { });
 
         System.out.println("list result is: " + result.size() ) ;
 

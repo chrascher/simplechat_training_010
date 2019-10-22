@@ -20,7 +20,7 @@ package at.cgsit.training.api.rest.dto;
  * test object
  * @Author CGS-IT Solutions @2019
  */
-public class TestObject {
+public class TestObjectDto {
 	
 	String vorname;
 	

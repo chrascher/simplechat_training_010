@@ -1,12 +1,5 @@
 package at.cgsit.training.api.rest.provider;
 
-import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
-
-import javax.ws.rs.Consumes;
-import javax.ws.rs.Produces;
-import javax.ws.rs.ext.Provider;
-
-
 class JsonProvider {
 
 }

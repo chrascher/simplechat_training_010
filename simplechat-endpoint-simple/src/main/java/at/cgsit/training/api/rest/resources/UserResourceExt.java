@@ -16,7 +16,7 @@
  */
 package at.cgsit.training.api.rest.resources;
 
-import at.cgsit.training.api.rest.dto.UserAccount;
+import at.cgsit.training.api.rest.dto.ChatUserDto;
 import at.cgsit.training.persistence.dao.ChatUserimpleDao;
 import at.cgsit.training.persistence.entities.ChatUserEntity;
 
@@ -52,7 +52,7 @@ public class UserResourceExt {
     @GET
     @Path("useraccount/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public UserAccount getDemoObject ( @PathParam("id") String id ) {   
+    public ChatUserDto getDemoObject (@PathParam("id") String id ) {
 
     	logger.info("id erhalten: " + id );
     	
@@ -62,7 +62,7 @@ public class UserResourceExt {
     	
     	ChatUserEntity user2 = chatUserDao.findChatUserBySelect(userId);
     	
-    	UserAccount obj = new UserAccount();
+    	ChatUserDto obj = new ChatUserDto();
     	obj.setUser_id( userEntity.getId().toString() );
     	obj.setUsername( userEntity.getNicname() );
     	obj.setEmail( userEntity.getEmail() );
@@ -74,7 +74,7 @@ public class UserResourceExt {
     @Path("useraccount")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public UserAccount putDemoObject (UserAccount input, @Context final HttpServletResponse response ) {   
+    public ChatUserDto putDemoObject (ChatUserDto input, @Context final HttpServletResponse response ) {
     	
         //set HTTP code to "201 Created"
         response.setStatus(HttpServletResponse.SC_CREATED);

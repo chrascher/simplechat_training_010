@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  * @Author CGS-IT Solutions @2019
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ChatMessage {
+public class ChatMessageDto {
 
     private String userName;
 
@@ -20,8 +20,8 @@ public class ChatMessage {
 
     private String chatMessage;
 
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    // @ JsonSerialize(using = LocalDateTimeSerializer.class)
+    // @ JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime creationTime;
 
     private Boolean isImportant;
@@ -50,12 +50,10 @@ public class ChatMessage {
         this.chatMessage = chatMessage;
     }
 
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     public LocalDateTime getCreationTime() {
         return creationTime;
     }
 
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
     public void setCreationTime(LocalDateTime creationTime) {
         this.creationTime = creationTime;
     }

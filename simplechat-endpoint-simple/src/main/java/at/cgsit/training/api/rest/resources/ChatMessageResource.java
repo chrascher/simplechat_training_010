@@ -1,12 +1,9 @@
 package at.cgsit.training.api.rest.resources;
 
-import at.cgsit.training.api.rest.dto.ChatMessage;
-import at.cgsit.training.api.rest.dto.ChatMessageQueryParam;
-import at.cgsit.training.api.rest.dto.UserAccount;
+import at.cgsit.training.api.rest.dto.ChatMessageDto;
 import at.cgsit.training.persistence.dao.ChatMessageDao;
 import at.cgsit.training.persistence.entities.ChatMessageEntity;
 import org.apache.log4j.Logger;
-import org.hsqldb.lib.StringUtil;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.Dependent;
@@ -15,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import java.lang.reflect.Array;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -26,7 +22,7 @@ import java.util.List;
 public class ChatMessageResource {
     final static Logger logger = Logger.getLogger(ChatMessageResource.class);
 
-    private static List<ChatMessage> messages = new ArrayList<>();
+    private static List<ChatMessageDto> messages = new ArrayList<>();
 
     @Inject
     ChatMessageDao dao;
@@ -35,7 +31,7 @@ public class ChatMessageResource {
     @PostConstruct
     public void init() {
         // add a starting dummy message
-        ChatMessage newMsg = new ChatMessage();
+        ChatMessageDto newMsg = new ChatMessageDto();
         newMsg.setChatMessage("test Message dummy");
         newMsg.setChatRoom("default");
         newMsg.setCreationTime(LocalDateTime.now());
@@ -46,7 +42,7 @@ public class ChatMessageResource {
     @Path("chat-message")
     //@Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public void sendChatMessage(ChatMessage input, @Context final HttpServletResponse response) {
+    public void sendChatMessage(ChatMessageDto input, @Context final HttpServletResponse response) {
         logger.info("sendChatMessages chat messages. adding message from user: " + input.getUserName());
 
         ChatMessageEntity newObject = new ChatMessageEntity();
@@ -71,7 +67,7 @@ public class ChatMessageResource {
     @Path("chat-message")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public List<ChatMessage> getChatMessage(@QueryParam(value="newerthen") String newerThen) {
+    public List<ChatMessageDto> getChatMessage(@QueryParam(value="newerthen") String newerThen) {
         logger.info("get chat messages. current message size is:" + messages.size());
 
         logger.info("input value for newerthen is: " +  newerThen);
@@ -88,10 +84,10 @@ public class ChatMessageResource {
 
         List<ChatMessageEntity> dbResultList = dao.findChatMessageNewerThen(dateTime);
 
-        List<ChatMessage> result = new ArrayList<>();
+        List<ChatMessageDto> result = new ArrayList<>();
 
         dbResultList.forEach(dbObject -> {
-            ChatMessage msg = new ChatMessage();
+            ChatMessageDto msg = new ChatMessageDto();
             msg.setUserName(dbObject.getUserName());
             msg.setCreationTime(dbObject.getCreationTime());
             msg.setChatRoom(dbObject.getChatRoom());

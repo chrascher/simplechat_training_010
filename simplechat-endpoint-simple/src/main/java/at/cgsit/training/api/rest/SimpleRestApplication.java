@@ -18,6 +18,7 @@ package at.cgsit.training.api.rest;
 
 import at.cgsit.training.api.rest.json.JacksonJavaTimeConfiguration;
 import at.cgsit.training.api.rest.resources.ChatMessageResource;
+import at.cgsit.training.api.rest.resources.ChatRoomResource;
 import at.cgsit.training.api.rest.resources.UserResource;
 import at.cgsit.training.api.rest.resources.UserResourceExt;
 
@@ -40,6 +41,7 @@ public class SimpleRestApplication extends Application {
         set.add(UserResource.class);
         set.add(UserResourceExt.class);
         set.add(ChatMessageResource.class);
+        set.add(ChatRoomResource.class);
 
         return set;
     }

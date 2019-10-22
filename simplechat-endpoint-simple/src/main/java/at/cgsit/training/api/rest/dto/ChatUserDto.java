@@ -4,7 +4,7 @@ package at.cgsit.training.api.rest.dto;
  *
  * @Author CGS-IT Solutions @2019
  */
-public class UserAccount {
+public class ChatUserDto {
 
 	private String user_id;
 	
