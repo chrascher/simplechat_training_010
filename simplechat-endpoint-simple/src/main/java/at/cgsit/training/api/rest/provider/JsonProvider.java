@@ -6,8 +6,14 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.ext.Provider;
 
+
+class JsonProvider {
+
+}
+/*
 @Provider
 @Consumes({ "application/json","application/*+json", "text/json" })
 @Produces({ "application/json","application/*+json", "text/json" })
 public class JsonProvider extends JacksonJsonProvider {
 }
+ */

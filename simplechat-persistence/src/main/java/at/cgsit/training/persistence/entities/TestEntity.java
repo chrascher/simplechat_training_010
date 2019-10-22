@@ -12,9 +12,11 @@ import javax.persistence.*;
 
 public class TestEntity implements Serializable {
 
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+
 	private String vorname;
-	private static final long serialVersionUID = 1L;
 
 	public TestEntity() {
 		super();

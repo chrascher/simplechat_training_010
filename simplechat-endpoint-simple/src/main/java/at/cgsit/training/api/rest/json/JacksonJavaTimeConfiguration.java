@@ -18,7 +18,7 @@ public class JacksonJavaTimeConfiguration implements ContextResolver<ObjectMappe
   public JacksonJavaTimeConfiguration() {
     mapper = new ObjectMapper();
     mapper.registerModule(new JSR310Module());
-    mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, true);
+    mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
   }
 
   @Override
