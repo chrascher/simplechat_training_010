@@ -26,12 +26,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import at.cgsit.training.beans.DemoBusinessBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 /**
  * Servlet implementation class VerySimpleServlet
  * this servlet is not annotated. instead it is registered
  * as servlet in th web.xml file
  */
+@Controller
 public class SimpleServletFour extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

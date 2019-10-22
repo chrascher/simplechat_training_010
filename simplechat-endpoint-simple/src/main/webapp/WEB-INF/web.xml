@@ -33,43 +33,14 @@
         <url-pattern>/api/rest/*</url-pattern>
     </servlet-mapping>
 
-    <!-- see ApplicationInitializers
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-    s-->
-    <!--
-    <listener>
-        <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
-    </listener>
-
-    <listener>
-        <listener-class>org.jboss.resteasy.plugins.spring.SpringContextLoaderListener</listener-class>
-    </listener>
-    -->
-
-    <!--    <context-param>-->
-    <!--        <param-name>contextConfigLocation</param-name>-->
-    <!--        <param-value>classpath:applicationContext.xml</param-value>-->
-    <!--    </context-param>-->
-    <!--    <listener>-->
-    <!--        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-    <!--    </listener>-->
-
-    <!--    <listener>-->
-    <!--        <listener-class>-->
-    <!--            com.sun.xml.ws.transport.http.servlet.WSServletContextListener-->
-    <!--        </listener-class>-->
-    <!--    </listener>-->
-    <!--   -->
-    <!--	<servlet>-->
-    <!--		<servlet-name>Very Simple</servlet-name>-->
-    <!--		<servlet-class>at.cgsit.training.servlets.SimpleServletFour</servlet-class>-->
-    <!--	</servlet>-->
-    <!--    <servlet-mapping>	-->
-    <!--        <servlet-name>Very Simple</servlet-name>-->
-    <!--        <url-pattern>/simple-servlet-four</url-pattern>-->
-    <!--    </servlet-mapping>-->
+    	<servlet>
+    		<servlet-name>Very Simple</servlet-name>
+    		<servlet-class>at.cgsit.training.servlets.SimpleServletFour</servlet-class>
+    	</servlet>
+        <servlet-mapping>
+            <servlet-name>Very Simple</servlet-name>
+            <url-pattern>/simple-servlet-four</url-pattern>
+        </servlet-mapping>
 
     <!--    <servlet>-->
     <!--        <servlet-name>soap</servlet-name>-->
@@ -83,10 +54,45 @@
     <!--        <url-pattern>/api/soap</url-pattern>-->
     <!--    </servlet-mapping>-->
 
-    <!--
-    <error-page>
-        <location>/general-error.jsp</location>
-    </error-page>
-    -->
+
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>at.cgsit.training.servlets.TestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/mylogin/test</url-pattern>
+    </servlet-mapping>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Wildcard means whole app requires authentication</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+
+        <auth-constraint>
+            <role-name>simplechat-app</role-name>
+        </auth-constraint>
+
+        <user-data-constraint>
+            <!-- transport-guarantee can be CONFIDENTIAL, INTEGRAL, or NONE -->
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.html</form-login-page>
+            <form-error-page>/login-failed.html</form-error-page>
+        </form-login-config>
+    </login-config>
+
+  <error-page>
+      <location>/general-error.jsp</location>
+  </error-page>
+
 
 </web-app>
