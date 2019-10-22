@@ -16,31 +16,28 @@
  */
 package at.cgsit.training.api.rest.dto;
 
-/**
- * test object
- * @Author CGS-IT Solutions @2019
- */
-public class TestObject {
-	
-	String vorname;
-	
-	String nachname;
+import java.time.LocalDateTime;
 
-	public String getVorname() {
-		return vorname;
-	}
+public class ChatMessageQueryParamDto {
 
-	public void setVorname(String vorname) {
-		this.vorname = vorname;
-	}
+    private String chatRoom;
 
-	public String getNachname() {
-		return nachname;
-	}
+    private LocalDateTime creationTime;
+    
 
-	public void setNachname(String nachname) {
-		this.nachname = nachname;
-	}
-	
+    public String getChatRoom() {
+        return chatRoom;
+    }
 
+    public void setChatRoom(String chatRoom) {
+        this.chatRoom = chatRoom;
+    }
+
+    public LocalDateTime getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(LocalDateTime creationTime) {
+        this.creationTime = creationTime;
+    }
 }

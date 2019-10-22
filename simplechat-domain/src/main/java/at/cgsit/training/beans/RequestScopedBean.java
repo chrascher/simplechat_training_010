@@ -1,8 +1,10 @@
 package at.cgsit.training.beans;
 
+import org.springframework.stereotype.Service;
+
 import java.text.DecimalFormat;
 
-
+@Service
 public class RequestScopedBean {
 	
 	private double num;
