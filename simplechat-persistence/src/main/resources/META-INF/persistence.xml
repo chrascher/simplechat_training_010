@@ -8,13 +8,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
         <non-jta-data-source>java:comp/env/jdbc/SimpleChatDB</non-jta-data-source>
-        <!-- Entity classes -->
-        <!-- 
-        <class>at.cgsit.training.UserAccount</class>
-         -->
-        
-    	<class>at.cgsit.training.persistence.entities.ChatUserEntity</class>
-       
+      
         <properties>
             <!-- DB Driver -->
             <!-- The JDBC URL to the database instance -->
