@@ -9,8 +9,6 @@ import javax.ws.rs.ext.Provider;
 
 
 /**
- * 
- * @author Matej Babjak
  *
  */
 @Provider
