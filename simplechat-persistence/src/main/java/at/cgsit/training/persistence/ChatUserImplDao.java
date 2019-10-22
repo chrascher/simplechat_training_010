@@ -42,7 +42,7 @@ public class ChatUserImplDao {
      */
 	public ChatUser findChatUser(Long userId) {
 
-        ChatUser result = em.find(ChatUser.class, userId);
+        ChatUser result = em.find(ChatUser.class, 13L);
          if (result == null) {
 			throw new RuntimeException("ChatUser account nicht gefunden");
   		 }    
@@ -51,11 +51,12 @@ public class ChatUserImplDao {
 
 	public ChatUser findChatUserBySelect(Long userId) {
         
-        Query query = null; // em.createQuery("SELECT user FROM ChatUser user WHERE user.id = :userid");
-        query.setParameter("userid", userId);
+        Query query = em.createQuery("SELECT user FROM ChatUser user WHERE user.id = :userid");
+
+        query.setParameter("userid", 13L);
         
         ChatUser result = (ChatUser) query.getSingleResult();
         
-	     return result;
+        return result;
 	}
 }
