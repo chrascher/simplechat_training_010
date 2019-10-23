@@ -20,12 +20,6 @@ public class ApplicationInitializer {
 
         context.setConfigLocation("classpath:applicationContext.xml");
 
-        // servletContext.setInitParameter("contextConfigLocation", "at.cgsit.training");
-
-    /*    AutowiredAnnotationBeanPostProcessor bpp = new AutowiredAnnotationBeanPostProcessor();
-        bpp.setBeanFactory(cc.getAutowireCapableBeanFactory());
-        bpp.processInjection(target);
-        */
     }
 
 }

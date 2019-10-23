@@ -4,6 +4,9 @@ import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
 
+/**
+ * @author CGS IT-Solutions
+ */
 @Service
 public class RequestScopedBean {
 	

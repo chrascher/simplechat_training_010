@@ -36,7 +36,6 @@ public class SimpleServlet extends HttpServlet {
     @Autowired
     DemoBusinessBean bean;
 
-
     private String defaultMessage;
     DecimalFormat df = new DecimalFormat("###.###");
     

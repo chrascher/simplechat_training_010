@@ -25,7 +25,6 @@ package at.cgsit.training.api.soap;
 public class UserSoap {
 
 	/**
-	 * 
 	 * @return
 	 */
 //    @WebMethod

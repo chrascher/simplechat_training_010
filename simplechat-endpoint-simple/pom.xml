@@ -35,11 +35,11 @@
         </dependency>
 
         <!-- BEGIN spring dependencies -->
-<!--        <dependency>-->
-<!--            <groupId>org.jboss.resteasy</groupId>-->
-<!--            <artifactId>resteasy-jaxrs</artifactId>-->
-<!--            <version>3.9.0.Final</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.jboss.resteasy</groupId>-->
+        <!--            <artifactId>resteasy-jaxrs</artifactId>-->
+        <!--            <version>3.9.0.Final</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-spring</artifactId>
@@ -72,15 +72,12 @@
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
         </dependency>
-
-
         <!-- BEGIN Soap Dependencies -->
         <dependency>
             <groupId>javax.xml.ws</groupId>
             <artifactId>jaxws-api</artifactId>
             <version>2.3.1</version>
         </dependency>
-
         <!--        <dependency>-->
         <!--            <groupId>com.sun.xml.ws</groupId>-->
         <!--            <artifactId>jaxws-rt</artifactId>-->
@@ -88,18 +85,20 @@
         <!--        </dependency>-->
         <!-- END Soap Dependencies -->
 
-        <!-- test dependency -->
         <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>2.29.1</version>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-client</artifactId>
+            <version>3.9.0.Final</version>
             <scope>test</scope>
         </dependency>
+
+      <!--
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
             <version>2.29.1</version>
         </dependency>
+        -->
     </dependencies>
 
 </project>

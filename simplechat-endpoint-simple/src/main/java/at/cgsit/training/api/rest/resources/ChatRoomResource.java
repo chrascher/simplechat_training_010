@@ -4,10 +4,10 @@ import at.cgsit.training.api.rest.dto.ChatRoomDto;
 import at.cgsit.training.persistence.dao.ChatRoomDao;
 import at.cgsit.training.persistence.entities.ChatRoomEntity;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.Optional;
 public class ChatRoomResource {
     final static Logger logger = Logger.getLogger(ChatRoomResource.class);
 
-    @Inject
+    @Autowired
     ChatRoomDao dao;
 
     @PostConstruct

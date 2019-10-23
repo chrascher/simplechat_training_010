@@ -9,15 +9,13 @@ import org.springframework.context.annotation.Scope;
 
 
 /**
- * @author cgssc
- *
+ * @author CGS IT-Solutions
  */
 @Scope("singleton")
 public class AppScopedTwo {
 
 	final static Logger logger = Logger.getLogger(AppScopedTwo.class);
 
-	
 	public void ping(String message) {		
 		logger.info("info message: " + message);
 	}

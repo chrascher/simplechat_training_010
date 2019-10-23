@@ -29,7 +29,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class VerySimpleServlet2
  */
-@WebServlet("//simple-servlet-five")
+@WebServlet("/simple-servlet-five")
 public class SimpleServletFive extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-//@ Ignore
+@Ignore
 public class UserSoapClientTest {
 
     private static UserSoapService userSoapService;

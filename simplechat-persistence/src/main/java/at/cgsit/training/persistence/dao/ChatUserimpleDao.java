@@ -3,6 +3,7 @@ package at.cgsit.training.persistence.dao;
 import at.cgsit.training.persistence.entities.ChatUserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -14,18 +15,13 @@ public class ChatUserimpleDao {
     @Autowired
     private EntityManager em;
 
-    // @Transactional(Transactional.TxType.REQUIRES_NEW)
+    @Transactional
     public ChatUserEntity doSomehting() {
-
-        em.getTransaction().begin();
-
         ChatUserEntity cu = new ChatUserEntity();
         cu.setNicname("testnic");
         cu.setEmail("testnic@cgs.at");
 
         em.persist(cu);
-
-        em.getTransaction().commit();
 
         return cu;
     }

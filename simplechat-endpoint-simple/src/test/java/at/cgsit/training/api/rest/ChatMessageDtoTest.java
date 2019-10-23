@@ -3,6 +3,7 @@ package at.cgsit.training.api.rest;
 import at.cgsit.training.api.provider.CustomJacksonProvider;
 import at.cgsit.training.api.rest.dto.ChatMessageDto;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.ws.rs.client.Client;
@@ -14,6 +15,7 @@ import javax.ws.rs.core.Response;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Ignore
 public class ChatMessageDtoTest {
 
     private static final String REST_URI
