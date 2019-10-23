@@ -19,7 +19,7 @@ import java.util.List;
 @Ignore
 public class ChatMessageDtoTest {
 
-    private static final String REST_BASE = "http://localhost:8080/simplechat_endpoint_simple_war";
+    private static final String REST_BASE = "http://localhost:5555/simplechat_endpoint_simple_war";
 
     private static final String REST_API_BASE = REST_BASE + "/api/rest";
 
