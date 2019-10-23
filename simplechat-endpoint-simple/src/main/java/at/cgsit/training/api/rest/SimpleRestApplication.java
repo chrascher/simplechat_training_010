@@ -45,17 +45,12 @@ public class SimpleRestApplication extends Application {
         set.add(UserResourceExt.class);
         set.add(ChatMessageResource.class);
         set.add(ChatRoomResource.class);
-
         return set;
     }
 
     protected void registerFilters(HashSet<Class<?>> set) {
         // to serialize/deserialize LocalDate in Json
-
-        // class com.fasterxml.jackson.datatype.jsr310.JavaTimeModule tried to access protected method 'void com.fasterxml.jackson.databind.ser.std.StdSerializer.<init>(java.lang.Class)' (com.fasterxml.jackson.datatype.jsr310.JavaTimeModule and com.fasterxml.jackson.databind.ser.std.StdSerializer are in unnamed module of loader org.apache.catalina.loader.ParallelWebappClassLoader @22865790)
-        //	com.fasterxml.jackson.datatype.jsr310.JavaTimeModule.<init>(JavaTimeModule.java:168)
         set.add(JacksonJavaTimeConfiguration.class);
-
     }
 
 }
