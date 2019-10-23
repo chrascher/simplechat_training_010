@@ -19,15 +19,14 @@
         <postgresql.version>42.2.6</postgresql.version>
 
         <!-- Spring -->
-        <springframework.version>5.1.9.RELEASE</springframework.version>
-        <spring-data-jpa.version>2.1.11.RELEASE</spring-data-jpa.version>
+        <springframework.version>5.2.0.RELEASE</springframework.version>
+        <spring-data-jpa.version>2.2.0.RELEASE</spring-data-jpa.version>
 
         <jackson.library>2.7.5</jackson.library>
         <!-- mysql-connector-java.version>6.0.6</mysql-connector-java.version -->
         <tomcat-dbcp.version>9.0.0.M26</tomcat-dbcp.version>
         <jta.version>1.1</jta.version>
         <querydsl.version>4.2.1</querydsl.version>
-
         <!-- util -->
         <guava.version>21.0</guava.version>
         <assertj.version>3.8.0</assertj.version>
@@ -67,7 +66,6 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
@@ -77,7 +75,6 @@
     </dependencyManagement>
 
     <dependencies>
-
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
