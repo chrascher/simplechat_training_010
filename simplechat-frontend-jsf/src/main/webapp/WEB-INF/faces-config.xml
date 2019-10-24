@@ -9,25 +9,27 @@
 	<!-- managed beans of the simple hello world app -->
 	<managed-bean>
 		<managed-bean-name>helloWorld</managed-bean-name>
-		<managed-bean-class>org.apache.myfaces.blank.HelloWorldController</managed-bean-class>
+		<managed-bean-class>at.cgsit.training.frontend.beans.HelloWorldController</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	
-	<!-- navigation rules for helloWorld.jsp -->
+	<!-- navigation rules for helloWorldStart.jsp -->
 	<navigation-rule>
-		<from-view-id>/helloWorld.jsp</from-view-id>
+		<from-view-id>/helloWorldStart.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/page2.jsp</to-view-id>
+			<to-view-id>/helloWorldResult.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
-	<!-- navigation rules for page2.jsp -->
+	 
+	<!-- navigation rules for helloWorldResult.jsp -->
 	<navigation-rule>
-		<from-view-id>/page2.jsp</from-view-id>
+		<from-view-id>/helloWorldResult.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>back</from-outcome>
-			<to-view-id>/helloWorld.jsp</to-view-id>
+			<to-view-id>/helloWorldResult.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+
 </faces-config>
+

@@ -3,6 +3,8 @@ package at.cgsit.training.api.rest.resources;
 import at.cgsit.training.api.rest.dto.ChatMessageDto;
 import at.cgsit.training.persistence.dao.ChatMessageDao;
 import at.cgsit.training.persistence.entities.ChatMessageEntity;
+import at.cgsit.training.service.ChatMessageService;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,9 @@ public class ChatMessageResource {
 
     @Autowired
     ChatMessageDao dao;
+    
+    @Autowired
+    ChatMessageService cmService;
 
     @PostConstruct
     public void init() {
@@ -44,18 +49,7 @@ public class ChatMessageResource {
     public void sendChatMessage(ChatMessageDto input, @Context final HttpServletResponse response) {
         logger.info("sendChatMessages chat messages. adding message from user: " + input.getUserName());
 
-        ChatMessageEntity newObject = new ChatMessageEntity();
-        newObject.setUserName(input.getUserName());
-        newObject.setChatMessage(input.getChatMessage());
-        newObject.setChatRoom(input.getChatRoom() != null ? input.getChatRoom() : "default");
-
-        if(input.getCreationTime()!=null) {
-            newObject.setCreationTime(input.getCreationTime());
-        } else {
-            newObject.setCreationTime(LocalDateTime.now());
-        }
-
-        dao.insertChatMessage(newObject);
+        cmService.chatmessageHandler(input);
 
         //set HTTP code to "201 Created"
         response.setStatus(HttpServletResponse.SC_CREATED);

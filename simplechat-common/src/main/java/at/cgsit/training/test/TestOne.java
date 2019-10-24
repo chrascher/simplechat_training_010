@@ -1,5 +1,8 @@
 package at.cgsit.training.test;
 
+/**
+ * common shared POJO
+ */
 class TestOne {
 	
 	private String testMessage;

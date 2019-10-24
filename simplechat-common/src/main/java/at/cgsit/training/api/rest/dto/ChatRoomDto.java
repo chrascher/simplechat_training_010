@@ -16,7 +16,7 @@
  */
 package at.cgsit.training.api.rest.dto;
 
-import javax.persistence.*;
+
 import java.io.Serializable;
 
 /**
