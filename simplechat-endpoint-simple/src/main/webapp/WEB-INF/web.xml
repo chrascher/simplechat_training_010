@@ -72,9 +72,16 @@
             <http-method>POST</http-method>
             <http-method>PUT</http-method>
         </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+        <!-- No auth-constraint means everybody has access! -->
+    </security-constraint>
+
+    <security-constraint>
         <web-resource-collection>
             <web-resource-name>url pattern for authentication</web-resource-name>
-            <url-pattern>/mylogin/*</url-pattern> <!-- /mylogin/* -->
+            <url-pattern>/mylogin/*</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
