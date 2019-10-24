@@ -27,7 +27,7 @@
 		<from-view-id>/helloWorldResult.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>back</from-outcome>
-			<to-view-id>/helloWorldResult.jsp</to-view-id>
+			<to-view-id>/helloWorldStart.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
