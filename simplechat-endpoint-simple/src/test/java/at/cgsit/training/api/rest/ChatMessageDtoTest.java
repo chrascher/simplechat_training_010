@@ -2,10 +2,15 @@ package at.cgsit.training.api.rest;
 
 import at.cgsit.training.api.provider.CustomJacksonProvider;
 import at.cgsit.training.api.rest.dto.ChatMessageDto;
+import at.cgsit.training.api.rest.resources.ChatRoomResource;
+import com.fasterxml.jackson.datatype.jsr310.JSR310Module;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -18,6 +23,9 @@ import java.util.List;
 
 @Ignore
 public class ChatMessageDtoTest {
+    final static Logger logger = LoggerFactory.getLogger(ChatMessageDtoTest.class);
+
+    // http://localhost:8080/simplechat_endpoint_simple_war/api/rest/chat/chat-message
 
     private static String REST_WEBAPP_NAME = "/simplechat_endpoint_simple_war";
 
@@ -25,18 +33,23 @@ public class ChatMessageDtoTest {
 
     private static final String REST_API_BASE = REST_BASE + "/api/rest";
 
-    private static final String REST_CHAT_MESSAGE = REST_BASE + "/chat/chat-message";
+    private static final String REST_CHAT_MESSAGE = REST_API_BASE + "/chat/chat-message";
 
     private static Client client;
 
     @BeforeClass
     public static void init() {
         ClientBuilder builder = ClientBuilder.newBuilder();
-        builder.register(CustomJacksonProvider.of(), 100);
+        builder.register(new JSR310Module());
+        builder.register(new JavaTimeModule());
+        // builder.register(CustomJacksonProvider.of(), 100);
         client = builder.build();
+
+        logger.info("using server url: {} " , REST_CHAT_MESSAGE);
     }
 
 
+    // @Ignore
     @Test
     public void chatMessagePutTest() {
 

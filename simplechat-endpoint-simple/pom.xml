@@ -14,8 +14,12 @@
 
     <repositories>
         <repository>
-            <id>JBoss repository</id>
-            <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+        <id>JBoss repository</id>
+        <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+    </repository>
+        <repository>
+            <id>Central Repository</id>
+            <url>https://repo.maven.apache.org/maven2/</url>
         </repository>
     </repositories>
 
@@ -70,12 +74,36 @@
         <!--END Spring dependencies -->
         <!-- BEGIN Rest Dependencies -->
 
+        <!--
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.9.10</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-parameter-names</artifactId>
+            <version>2.9.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jdk8</artifactId>
+            <version>2.9.10</version>
+        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>2.9.10</version>
         </dependency>
 
+        <!--
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-modules-java8</artifactId>
+            <version>2.9.10</version>
+        </dependency>
+        -->
         <!-- END OF Rest Dependencies -->
         <dependency>
             <groupId>org.postgresql</groupId>
