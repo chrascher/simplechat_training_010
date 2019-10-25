@@ -17,11 +17,14 @@
 package at.cgsit.training.api.rest.resources;
 
 import at.cgsit.training.ApplicationInformation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.time.LocalDateTime;
 
 /**
  * User resource is a minimal example howto use jax-rs rest services
@@ -34,10 +37,15 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("user")
 public class UserResource {
+    final static Logger logger = LoggerFactory.getLogger(ChatRoomResource.class);
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String message() {
+        logger.warn("message warn");
+        logger.info("message called {}", LocalDateTime.now());
+        logger.debug("message debug info ");
+
         return "{ \"result\" : \" Hello World \" }";
     }	
 	

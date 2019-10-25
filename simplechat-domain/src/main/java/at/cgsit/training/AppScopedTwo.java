@@ -3,8 +3,9 @@
  */
 package at.cgsit.training;
 
-import org.apache.log4j.Logger;
-import org.springframework.context.annotation.Bean;
+import at.cgsit.training.persistence.dao.ChatRoomDao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 
 
@@ -14,7 +15,7 @@ import org.springframework.context.annotation.Scope;
 @Scope("singleton")
 public class AppScopedTwo {
 
-	final static Logger logger = Logger.getLogger(AppScopedTwo.class);
+	final static Logger logger = LoggerFactory.getLogger(ChatRoomDao.class);
 
 	public void ping(String message) {		
 		logger.info("info message: " + message);

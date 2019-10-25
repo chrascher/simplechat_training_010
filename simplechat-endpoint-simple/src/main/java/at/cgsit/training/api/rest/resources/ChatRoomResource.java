@@ -3,7 +3,9 @@ package at.cgsit.training.api.rest.resources;
 import at.cgsit.training.api.rest.dto.ChatRoomDto;
 import at.cgsit.training.persistence.dao.ChatRoomDao;
 import at.cgsit.training.persistence.entities.ChatRoomEntity;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -17,7 +19,7 @@ import java.util.Optional;
 @Path("room")
 @Controller
 public class ChatRoomResource {
-    final static Logger logger = Logger.getLogger(ChatRoomResource.class);
+    final static Logger logger = LoggerFactory.getLogger(ChatRoomResource.class);
 
     @Autowired
     ChatRoomDao dao;

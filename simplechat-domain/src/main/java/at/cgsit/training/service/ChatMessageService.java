@@ -1,22 +1,21 @@
 package at.cgsit.training.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import at.cgsit.training.api.rest.dto.ChatMessageDto;
 import at.cgsit.training.persistence.dao.ChatMessageDao;
 import at.cgsit.training.persistence.entities.ChatMessageEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-
-import org.apache.log4j.Logger;
 
 /**
  * @author CGS IT-Solutions
  */
 @Service
 public class ChatMessageService {
-	   final static Logger logger = Logger.getLogger(ChatMessageService.class);
+	final static Logger logger = LoggerFactory.getLogger(ChatMessageService.class);
 
 	@Autowired
 	private ChatMessageDao cmDao;

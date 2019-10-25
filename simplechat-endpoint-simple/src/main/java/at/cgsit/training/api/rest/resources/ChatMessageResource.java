@@ -5,7 +5,9 @@ import at.cgsit.training.persistence.dao.ChatMessageDao;
 import at.cgsit.training.persistence.entities.ChatMessageEntity;
 import at.cgsit.training.service.ChatMessageService;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -22,7 +24,7 @@ import java.util.List;
 @Path("chat")
 @Controller
 public class ChatMessageResource {
-    final static Logger logger = Logger.getLogger(ChatMessageResource.class);
+    final static Logger logger = LoggerFactory.getLogger(ChatMessageResource.class);
 
     private static List<ChatMessageDto> messages = new ArrayList<>();
 

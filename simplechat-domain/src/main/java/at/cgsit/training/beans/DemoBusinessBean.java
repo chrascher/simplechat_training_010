@@ -1,7 +1,9 @@
 package at.cgsit.training.beans;
 
 import at.cgsit.training.persistence.dao.ChatUserimpleDao;
-import org.apache.log4j.Logger;
+import at.cgsit.training.service.ChatMessageService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DemoBusinessBean {
-	final static Logger logger = Logger.getLogger(DemoBusinessBean.class);
+	final static Logger logger = LoggerFactory.getLogger(ChatMessageService.class);
 
 	@Autowired
 	private ChatUserimpleDao simple;

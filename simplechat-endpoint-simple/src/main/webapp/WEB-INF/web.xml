@@ -20,6 +20,7 @@
     <listener>
         <listener-class>org.jboss.resteasy.plugins.spring.SpringContextLoaderListener</listener-class>
     </listener>
+
     <servlet>
         <servlet-name>RESTEasyService</servlet-name>
         <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
@@ -54,7 +55,6 @@
     <!--        <url-pattern>/api/soap</url-pattern>-->
     <!--    </servlet-mapping>-->
 
-
     <servlet>
         <servlet-name>TestServlet</servlet-name>
         <servlet-class>at.cgsit.training.servlets.TestServlet</servlet-class>
@@ -64,6 +64,7 @@
         <url-pattern>/mylogin/test</url-pattern>
     </servlet-mapping>
 
+    <!--
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>allow</web-resource-name>
@@ -71,11 +72,9 @@
             <http-method>GET</http-method>
             <http-method>POST</http-method>
             <http-method>PUT</http-method>
+            <http-method>HEAD</http-method>
         </web-resource-collection>
-        <user-data-constraint>
-            <transport-guarantee>NONE</transport-guarantee>
-        </user-data-constraint>
-        <!-- No auth-constraint means everybody has access! -->
+        <! No auth-constraint means everybody has access! >
     </security-constraint>
 
     <security-constraint>
@@ -102,7 +101,7 @@
             <form-error-page>/login-failed.html</form-error-page>
         </form-login-config>
     </login-config>
-
+  -->
 
   <error-page>
       <location>/general-error.jsp</location>

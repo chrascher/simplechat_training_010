@@ -21,6 +21,8 @@ import at.cgsit.training.api.rest.resources.ChatMessageResource;
 import at.cgsit.training.api.rest.resources.ChatRoomResource;
 import at.cgsit.training.api.rest.resources.UserResource;
 import at.cgsit.training.api.rest.resources.UserResourceExt;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -29,12 +31,15 @@ import java.util.Set;
 
 @ApplicationPath("api/rest")
 public class SimpleRestApplication extends Application {
+    final static Logger logger = LoggerFactory.getLogger(UserResourceExt.class);
 
     public SimpleRestApplication() {
     }
 
     @Override
     public  Set<Class<?>> getClasses() {
+        logger.info("SimpleRestApplication called");
+
         HashSet<Class<?>> set = new HashSet<>();
 
         // filters(interceptors)

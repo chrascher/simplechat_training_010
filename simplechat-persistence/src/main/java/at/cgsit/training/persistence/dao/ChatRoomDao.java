@@ -1,17 +1,15 @@
 package at.cgsit.training.persistence.dao;
 
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.Query;
-
-import at.cgsit.training.persistence.entities.ChatMessageEntity;
 import at.cgsit.training.persistence.entities.ChatRoomEntity;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +20,7 @@ import java.util.Optional;
  */
 @Repository
 public class ChatRoomDao {
-    final static Logger logger = Logger.getLogger(ChatRoomDao.class);
+    final static Logger logger = LoggerFactory.getLogger(ChatRoomDao.class);
 
     @Autowired
     private EntityManager em;

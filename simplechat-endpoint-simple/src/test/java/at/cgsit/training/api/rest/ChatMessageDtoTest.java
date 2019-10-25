@@ -19,7 +19,9 @@ import java.util.List;
 @Ignore
 public class ChatMessageDtoTest {
 
-    private static final String REST_BASE = "http://localhost:5555/simplechat_endpoint_simple_war";
+    private static String REST_WEBAPP_NAME = "/simplechat_endpoint_simple_war";
+
+    private static final String REST_BASE = "http://localhost:8080" + REST_WEBAPP_NAME;
 
     private static final String REST_API_BASE = REST_BASE + "/api/rest";
 
@@ -45,8 +47,9 @@ public class ChatMessageDtoTest {
 //        newMsg.setImportant(Boolean.FALSE);
 //        newMsg.setCreationTime(LocalDateTime.now());
 
+        // .request(MediaType.APPLICATION_JSON)
         Response response = client.target(REST_CHAT_MESSAGE)
-                .request(MediaType.APPLICATION_JSON)
+                .request()
                 .put(Entity.entity(newMsg, MediaType.APPLICATION_JSON));
 
         Assert.assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());

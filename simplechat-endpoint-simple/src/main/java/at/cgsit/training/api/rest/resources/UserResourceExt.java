@@ -19,7 +19,9 @@ package at.cgsit.training.api.rest.resources;
 import at.cgsit.training.api.rest.dto.ChatUserDto;
 import at.cgsit.training.persistence.dao.ChatUserimpleDao;
 import at.cgsit.training.persistence.entities.ChatUserEntity;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -36,8 +38,8 @@ import javax.ws.rs.core.MediaType;
 @Path("userext")
 @Controller
 public class UserResourceExt {
-	final static Logger logger = Logger.getLogger(UserResourceExt.class);
-	
+    final static Logger logger = LoggerFactory.getLogger(UserResourceExt.class);
+
 	// inject the chat user data access object 
 	@Autowired
 	private ChatUserimpleDao chatUserDao;
@@ -47,7 +49,7 @@ public class UserResourceExt {
     @Produces(MediaType.APPLICATION_JSON)
     public ChatUserDto getDemoObject (@PathParam("id") String id ) {
 
-    	logger.info("id erhalten: " + id );
+    	logger.info("id erhalten: {}", id );
     	
     	Long userId = Long.parseLong(id);
 
