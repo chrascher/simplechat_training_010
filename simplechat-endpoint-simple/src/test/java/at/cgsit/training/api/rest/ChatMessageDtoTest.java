@@ -40,9 +40,9 @@ public class ChatMessageDtoTest {
     @BeforeClass
     public static void init() {
         ClientBuilder builder = ClientBuilder.newBuilder();
-        builder.register(new JSR310Module());
+        // builder.register(new JSR310Module());
         builder.register(new JavaTimeModule());
-        // builder.register(CustomJacksonProvider.of(), 100);
+        builder.register(CustomJacksonProvider.of(), 100);
         client = builder.build();
 
         logger.info("using server url: {} " , REST_CHAT_MESSAGE);
@@ -65,7 +65,7 @@ public class ChatMessageDtoTest {
                 .request()
                 .put(Entity.entity(newMsg, MediaType.APPLICATION_JSON));
 
-        Assert.assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        Assert.assertEquals(Response.Status.NO_CONTENT.getStatusCode(), response.getStatus());
 
     }
 
