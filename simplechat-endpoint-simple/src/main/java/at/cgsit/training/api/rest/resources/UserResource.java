@@ -44,7 +44,7 @@ public class UserResource {
     public String message() {
         logger.warn("message warn");
         logger.info("message called {}", LocalDateTime.now());
-        logger.debug("message debug info ");
+        logger.debug("message debug info {}", 5L); // use variable in slf4j
 
         return "{ \"result\" : \" Hello World \" }";
     }	

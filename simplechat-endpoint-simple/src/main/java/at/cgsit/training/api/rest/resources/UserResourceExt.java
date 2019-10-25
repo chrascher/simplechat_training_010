@@ -54,7 +54,6 @@ public class UserResourceExt {
     	Long userId = Long.parseLong(id);
 
     	ChatUserEntity userEntity = chatUserDao.findChatUser(userId);
-
     	ChatUserEntity user2 = chatUserDao.findChatUserBySelect(userId);
     	
     	ChatUserDto obj = new ChatUserDto();
