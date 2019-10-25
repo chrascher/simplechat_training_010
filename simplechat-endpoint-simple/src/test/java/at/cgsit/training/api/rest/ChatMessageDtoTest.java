@@ -52,13 +52,14 @@ public class ChatMessageDtoTest {
     // @Ignore
     @Test
     public void chatMessagePutTest() {
-
         ChatMessageDto newMsg = new ChatMessageDto();
         newMsg.setChatMessage("test Message via api 2");
         newMsg.setChatRoom("default");
         newMsg.setUserName("johndoe");
-//        newMsg.setImportant(Boolean.FALSE);
-//        newMsg.setCreationTime(LocalDateTime.now());
+        newMsg.setImportant(Boolean.FALSE);
+        newMsg.setCreationTime(LocalDateTime.now());
+
+        long start = System.currentTimeMillis();
 
         // .request(MediaType.APPLICATION_JSON)
         Response response = client.target(REST_CHAT_MESSAGE)
@@ -66,7 +67,8 @@ public class ChatMessageDtoTest {
                 .put(Entity.entity(newMsg, MediaType.APPLICATION_JSON));
 
         Assert.assertEquals(Response.Status.NO_CONTENT.getStatusCode(), response.getStatus());
-
+        long end = System.currentTimeMillis();
+        logger.info("insert put took : {}", (end-start) );
     }
 
     /**
